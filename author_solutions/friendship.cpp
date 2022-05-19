@@ -31,19 +31,12 @@ int main(){
         cin >> b[i];
         v[min(n,i + b[i])].pb(i);
     }
-    rep(i,1,n){
-        rep(j,i+1,n){
-            if(i + b[i] >= j && j - a[j] <= i){
-                cout << i << ' ' << j << '\n';
-            }
-        }
-    }
     per(i,n,1){
         for(int x : v[i]){
             upd(x);
         }
         ans += sum(i-1) - sum(i - a[i] - 1);
-    }//for the second task, change BIT to segtree to get the rangemax
+    }
     cout << ans << '\n';
     return 0;
 }
