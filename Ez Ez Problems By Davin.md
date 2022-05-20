@@ -34,16 +34,12 @@ N<=100
 for every name,
 name (a string)
 
-# Alien Counting 
+# Grocery Shopping with Michael
 
-Bloo, an alien from far away, counts in a very weird way. Instead of counting from 1, 2, 3, 4, and so on, Bloo counts like 1, 3, 11, 43, and so on. 
+Michael is grocery shopping and must give the cashier at least N dollars (if he exceeds his total, his cashier will simply give him the appropriate amount of change). However, Michael does not like the digits 2 and 7, so he does not want to pay an amount wherein any digits are multiples by 2 or 7. Find the smallest number where this is possible. 
 
-More formally,$$a_{n}=a_{n-1}*4-1$$, where the next term is equal to the previous term multiplied by four and subtracted by 1.
-
-Given a number, N, find the Nth number Bloo counts. 
-
-Input Format:
-N<=100
+Input Format: 
+N<=10^9
 
 # Michael's Star Trek Wall
 
