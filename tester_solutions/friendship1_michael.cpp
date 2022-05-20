@@ -4,18 +4,18 @@ using namespace std;
 #define pb push_back
 #define inf 1000000000
 
-struct NodeM{
-	int mval;
-	NodeM():mval(inf){}
-	NodeM(int val_):mval(val_){}
-	void update(int val_){ mval=val_; }
-	static NodeM merge(NodeM& ll, NodeM& rr){
-		return NodeM(min(ll.mval, rr.mval));
+struct NodeS{
+	int val;
+	NodeS():val(0){}
+	NodeS(int val_):val(val_){}
+	void update(int val_){ val+=val_; }
+	static NodeS merge(NodeS& ll, NodeS& rr){
+		return NodeS(ll.val+rr.val);
 	}
-	void pull_up(NodeM& ll, NodeM& rr){
+	void pull_up(NodeS& ll, NodeS& rr){
 		(*this) = merge(ll, rr);
 	}
-	int ans(){ return mval; }
+	int ans(){ return val; }
 };
 
 template<class Node>
@@ -58,7 +58,6 @@ void solve(){
 	for(int i=0;i<n;i++) cin>>L[i];
 	for(int i=0;i<n;i++) cin>>R[i];
 
-
 	for(int i=0;i<n;i++){
 		if(R[i]+i < n) R[i]+=i;
 		else R[i]=n-1;
@@ -74,24 +73,25 @@ void solve(){
 		endptrs[R[i]].pb(i);
 	}
 
-	segtree<NodeM> tracker(n);
-	int maxD = -1;
+	segtree<NodeS> tracker(n);
+	int total = 0;
 	for(int i=0;i<n;i++){
 		// first we deal with the current one
 		int l = L[i];
-		int li = tracker.query(l,i).ans();
+		int c = tracker.query(l,i).ans();
 
-		maxD = max(maxD, i-li);
 
-		tracker.update(i, i);
+		total += c;
+
+		tracker.update(i, 1);
 
 		// then we process the right endpoints
 		for(int e : endptrs[i]){
-			tracker.update(e, inf);
+			tracker.update(e, -1);
 		}
 	}
 
-	cout<<maxD<<endl;
+	cout<<total<<endl;
 }
 
 
