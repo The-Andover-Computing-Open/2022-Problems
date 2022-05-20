@@ -12,12 +12,13 @@ b0, b1,..., bN, the location of the rocks on the floor
 
 # Michael's Star Trek Wall
 
-Michael's wall is covered with rectangular Star Trek posters. His goal is to one day cover his entire wall, but he's a little short. Fortunately, he has enough pieces of tape to move four of his posters to new places. 
+Rectangular Star Trek posters are hanging on Michael's wall. His goal is to one day cover the entire wall, but he's unsuccessful so far. Fortunately, he has enough pieces of tape to move one of his posters to new locations.
 
-Given the location of his existing posters, return 'Yes' if Michael if can cover his entire wall by moving 5 posters, and 'No' otherwise.
+Given the location of his existing posters, return "Yes" if it's possible for Michael to cover the entire wall by moving one poster and "No" otherwise.
 
 Input Format:
-N - Number of posters
+N - Number of posters (N<=10)
+for every poster,
 a0, a1, a2, a3 describing (a0, a1), the upper left corner, and (a2, a3), the lower right corner, of the posters on the 100 x 100 wall
 
 # Rlash Coyale
