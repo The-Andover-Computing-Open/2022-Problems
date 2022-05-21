@@ -37,12 +37,19 @@ int main(int argc, char** argv){
 			else
 				cout<<brr[i]<<" ";
 		}
-	}else{
+	}else if(random(0,100) > 50){
 		for(int i=0;i<n;i++){
 			if(i==n-1)
 				cout<<arr[i]<<endl;
 			else
 				cout<<arr[i]<<" ";
+		}
+	}else {
+		for(int i=0;i<n;i++){
+			if(i==n-1)
+				cout<<random(1,n)<<endl;
+			else
+				cout<<random(1,n)<<" ";
 		}
 	}
 }
