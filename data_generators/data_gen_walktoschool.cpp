@@ -15,11 +15,12 @@ int random(int st, int ed){
 
 int main(int argc, char** argv){
 	srand(atoi(argv[1]));
-	int n = random(1, 1000);
-	int m = random(1, min(1000, n*n/3));
+	int bound = 4;
+	int n = random(2, bound);
+	int m = random(1, min(bound, n*n/3));
 
-	cout<<n<<" "<<m<<endl;
-	cout<<random(1, n)<<endl;
+
+	cout<<n<<" "<<m<<" "<<random(1, n)<<endl;
 	set<pair<int,int>> used;
 	for(int i=0;i<m;i++){
 		int a = random(1, n), b = random(1, n);

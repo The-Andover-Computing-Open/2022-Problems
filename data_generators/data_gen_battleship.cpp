@@ -15,8 +15,19 @@ int random(int st, int ed){
 
 int main(int argc, char** argv){
 	srand(atoi(argv[1]));
-	int n = random(1,1000000000);
-	cout<<n<<" "<<random(1,10)<<" "<<random(1,n+1)<<" "<<random(1,100000)<<endl;
+	int n = random(1, 100);
+	int r = random(0,n-1);
+	int c = random(0,n-1);
+
+	cout<<n<<" "<<r<<" "<<c<<endl;
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(random(1,100)>50) cout<<"S ";
+			else cout<<"O ";
+		}
+		cout<<endl;
+	}
 }
 
 

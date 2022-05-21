@@ -15,8 +15,26 @@ int random(int st, int ed){
 
 int main(int argc, char** argv){
 	srand(atoi(argv[1]));
-	int n = random(1,1000000000);
-	cout<<n<<" "<<random(1,10)<<" "<<random(1,n+1)<<" "<<random(1,100000)<<endl;
+	int n = random(1,100000);
+	int m = random(1,100000);
+	cout<<n<<" "<<m<<endl;
+	int ed = 0;
+	for(int i=0;i<n;i++){
+		int st = random(ed+1,ed+9999);
+		if(i == 0) st = 1;
+		int w = random(1, 9999);
+		ed = st + w - 1;
+		cout<<st<<" "<<w<<endl;
+	}
+	ed = 0;
+	for(int i=0;i<m;i++){
+		int st = random(ed+1,ed+9999);
+		int w = random(1, 9999);
+		ed = st + w - 1;
+		cout<<st<<" "<<w<<endl;
+	}
+
+
 }
 
 
