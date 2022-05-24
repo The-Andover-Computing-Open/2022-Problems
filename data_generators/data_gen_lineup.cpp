@@ -15,7 +15,7 @@ int random(int st, int ed){
 
 int main(int argc, char** argv){
 	srand(atoi(argv[1]));
-	int n = random(1, 1000);
+	int n = random(1, 10);
 	cout<<n<<endl;
 	vector<int> arr(n);
 	iota(arr.begin(), arr.end(), 1);
